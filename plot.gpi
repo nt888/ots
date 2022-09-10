@@ -1,0 +1,11 @@
+#!/bin/gnuplot -persist
+
+set datafile separator ","
+set grid
+# set yrange [-1.1:1.1]
+# set xrange [-pi:pi]
+set xlabel "Time"
+set ylabel "Signal"
+set title "Test"
+
+plot "data.csv" using 1:2 with lines title "S(t)"
