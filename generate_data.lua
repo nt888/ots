@@ -2,8 +2,8 @@
 
 -- local Vmod = 600
 -- local Vinf = 1200
--- local q = 4
 -- local m = 2
+local q = 4
 local f0 = 2400 -- Hz
 local T = 1 / 600
 local A = 1 -- TODO: why?
@@ -21,7 +21,7 @@ local Si2 = { A, -A, A, -A }
 local S = {}
 for i = 1, #t do
     S[i] = {}
-    for j = 1, #Si1 do
+    for j = 1, q do
         S[i][j] = Si1[j] * math.sqrt(2 / T) * math.cos(2 * math.pi * f0 * t[i])
             + Si2[j] * math.sqrt(2 / T) * math.sin(2 * math.pi * f0 * t[i])
     end
